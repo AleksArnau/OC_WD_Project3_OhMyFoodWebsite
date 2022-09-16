@@ -1,5 +1,5 @@
 /*using https://codepen.io/sosuke/pen/Pjoqqp */
-.filter-white {
+.footer__logo--filter-white {
   filter: invert(99%) sepia(0%) saturate(2124%) hue-rotate(293deg)
     brightness(121%) contrast(100%);
 }
