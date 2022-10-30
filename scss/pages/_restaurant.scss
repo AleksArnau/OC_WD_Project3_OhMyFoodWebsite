@@ -1,0 +1,144 @@
+.banner__img {
+  max-height: 30em;
+  height: 300px;
+  object-fit: cover;
+  // background: url("../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  // background-size: cover;
+}
+
+.restaurant__header {
+  background-color: $color-bg-lighter;
+  padding: 1em 5% 0em 5%;
+  @include flex-center-row-sb;
+  @include card-top-radius(2.5em);
+  margin-top: -4.8em;
+  position: relative;
+
+  .restaurant__titre {
+    @include text-title-restaurant;
+    @include margin-top-bot(0.8em);
+  }
+
+  .restaurant__button {
+    position: absolute;
+    right: 2.5rem;
+    top: 2.5rem;
+    cursor: pointer;
+
+    .button__icone {
+      font-size: 28px;
+    }
+    .button__icone--active {
+      display: none;
+    }
+  }
+  .restaurant__button:hover {
+    .button__icone--inactive {
+      display: none;
+    }
+    .button__icone--active {
+      display: flex;
+    }
+  }
+}
+
+.menu {
+  background-color: $color-bg-lighter;
+  @include flex-center-column-sa;
+  @include padding-sides($padding-sides);
+
+  .menu__course {
+    width: 100%;
+    @include padding-top-bot(0.5em);
+
+    .course__titre {
+      @include text-light;
+      font-size: 16px;
+      text-transform: uppercase;
+      @include margin-top-bot(0.6em);
+      padding-bottom: 0.5em;
+      position: relative;
+    }
+    .course__titre::after {
+      content: "";
+      width: 2.5rem;
+      height: 0.2rem;
+      background-color: $color-tertiary;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    .course__elements {
+      @include flex-start-column-sa;
+
+      .course__element {
+        @include flex-custom(space-between, flex-end, row, nowrap, flex-start);
+        width: 100%;
+        padding: 10px;
+        @include margin-top-bot(5px);
+        background-color: $color-bg;
+        position: relative;
+        border-radius: 1em;
+        box-shadow: 0px 2px 15px -7px $color-shadow;
+
+        .element__desc {
+          @include flex-custom(
+            space-between,
+            flex-start,
+            column,
+            nowrap,
+            flex-start
+          );
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+
+          .element__titre {
+            @include text-bold;
+            @include margin-top-bot(5px);
+          }
+          .element__text {
+            @include text-light;
+            font-size: 15px;
+            @include margin-top-bot(5px);
+          }
+        }
+        .element__prix {
+          @include text-bold;
+          font-size: 15px;
+          @include margin-top-bot(5px);
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+          @include padding-sides(1em);
+        }
+        .element__active {
+          background-color: $color-tertiary;
+          width: 3em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: none;
+
+          .element__active-icone {
+            background-color: $color-white;
+            color: $color-tertiary;
+            height: 1.2rem;
+            width: 1.2rem;
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .wrap__button {
+    margin-top: 2em;
+    margin-bottom: 4em;
+    width: 12em;
+  }
+}

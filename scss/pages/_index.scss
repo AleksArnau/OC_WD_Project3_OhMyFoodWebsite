@@ -1,0 +1,185 @@
+.local {
+  background-color: $color-bg-darker;
+  @include padding-top-bot($padding-height);
+  @include flex-center-row;
+  box-shadow: inset 0px 10px 10px -10px $color-shadow;
+
+  .local__icon {
+    color: $color-grey;
+    width: 1.8rem;
+  }
+  .local__text {
+    color: $color-grey;
+    font-weight: bold;
+  }
+}
+
+.intro {
+  height: 18rem;
+  background-color: $color-bg-lighter;
+  @include flex-center-column-sa;
+  @include padding-top-bot($padding-height);
+
+  .intro__titre {
+    @include text-title;
+    @include text-center;
+  }
+
+  .intro__text {
+    @include text-center;
+    @include text-light;
+  }
+}
+
+.fonction {
+  background-color: $color-bg;
+  @include padding-sides($padding-sides);
+  @include padding-top-bot($padding-height);
+  @include flex-custom(flex-start, flex-start, column, nowrap, flex-start);
+
+  .fonction__titre {
+    @include text-title;
+    @include padding-top-bot(2rem);
+  }
+  .fonction__etapes {
+    width: 100%;
+    margin-bottom: 1em;
+    @include flex-custom(flex-start, center, column, nowrap, flex-start);
+    list-style-type: none;
+    counter-reset: etapeCompteur;
+
+    .fonction__etape {
+      max-width: 90%;
+      width: 350px;
+      margin-bottom: 1.5em;
+      @include frame-step;
+      @include flex-custom(flex-start, center, row, nowrap, flex-start);
+      position: relative;
+
+      .fonction__icone {
+        width: 3rem;
+        color: $color-light-grey;
+        font-size: 20px;
+      }
+    }
+    .fonction__etape:hover {
+      @include frame-step-hover;
+
+      .fonction__icone {
+        color: $color-primary;
+      }
+
+      .fonction__text {
+        color: $color-grey;
+      }
+    }
+    .fonction__etape::before {
+      counter-increment: etapeCompteur;
+      content: counter(etapeCompteur) " ";
+      background-color: $color-primary;
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $color-white;
+      position: absolute;
+      left: -1em;
+    }
+  }
+}
+
+.restaurants {
+  @include flex-start-column-sa;
+  background-color: $color-bg-lighter;
+  padding: $padding-height $padding-sides 4rem $padding-sides;
+
+  .restaurants__titre {
+    @include text-title;
+    @include padding-top-bot(1.5em);
+  }
+
+  .restaurants__cartes {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 1em;
+    row-gap: 1em;
+    width: 100%;
+    a {
+      text-decoration: none;
+    }
+
+    .restaurants__carte {
+      border-radius: $card-radius;
+      background-color: $color-white;
+      @include box-shadow;
+      position: relative;
+
+      .carte__img {
+        @include card-top-radius($card-radius);
+        height: 12rem;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .carte__badge {
+        position: absolute;
+        top: $card-radius;
+        right: $card-radius;
+        @include padding-top-bot(0.5em);
+        @include padding-sides(0.8em);
+        border-radius: 2px;
+        background-color: $color-tertiary;
+        @include text-color-brightness-auto($color-tertiary);
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      .carte__desc {
+        padding: 1em;
+        @include flex-custom(space-between, center, row, nowrap, center);
+        position: relative;
+
+        .carte__contenu {
+          .carte__titre {
+            font-weight: bold;
+            font-size: 18px;
+            color: $color-black;
+            margin-bottom: 0.5em;
+          }
+
+          .carte__text {
+            font-weight: 300;
+            color: $color-black;
+          }
+        }
+        .carte__button {
+          position: absolute;
+          right: 1.5rem;
+
+          .carte__icone {
+            font-size: 24px;
+          }
+          .carte__icone--inactive {
+            display: none;
+          }
+        }
+        .carte__button:hover {
+          .carte__icone--active {
+            display: none;
+          }
+          .carte__icone--inactive {
+            display: flex;
+          }
+        }
+      }
+    }
+    .restaurants__carte:active {
+      color: $color-black;
+    }
+    .restaurants__carte:visited {
+      color: $color-black;
+    }
+  }
+}

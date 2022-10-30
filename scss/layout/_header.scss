@@ -1,0 +1,32 @@
+header {
+  background-color: $color-bg;
+  margin: 0px;
+  padding: 0px;
+  padding: 1em 1em 0em 1em;
+  height: 65px;
+  width: 100%;
+  @include flex-custom(center, center, row, nowrap, flex-start);
+  position: relative;
+
+  .header__return {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+
+    .header__return-icon {
+      font-size: 20px;
+    }
+  }
+
+  .header__return:active {
+    color: $color-black;
+  }
+
+  .header__return:visited {
+    color: $color-black;
+  }
+
+  .header__logo {
+    width: 175px;
+  }
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <meta charset="UTF-8" />
 
     <script
@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap"
       rel="stylesheet"
     />
 
@@ -20,45 +20,186 @@
   </head>
 
   <body>
-    <header>
-      <a href="./index.html">
+    <header class="header">
+      <a href="./index.html" class="header__return">
+        <i class="fa-solid fa-arrow-left header__return-icon"></i>
+      </a>
+      <a href="./index.html" class="header__logo">
         <img
           alt="Logo OhMyFood"
-          style="width: 250px; height: 120px"
           src="./assets/images/logo/ohmyfood@2x.svg"
+          class="header__logo-img img"
         />
       </a>
     </header>
-    <main></main>
-    <footer>
-      <div class="boite">
-        <img
-          alt="Logo OhMyFood"
-          style="width: 100px; height: 40px"
-          src="./assets/images/logo/ohmyfood@2x.svg"
-          class="filter-white"
-        />
-        <ul class="footer_liste">
-          <li class="footer_liste_element">
-            <a class="footer_lien" href="#"
-              ><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a
-            >
-          </li>
-          <li class="footer_liste_element">
-            <a class="footer_lien" href="#"
-              ><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a
-            >
-          </li>
-          <li class="footer_liste_element">
-            <a class="footer_lien" href="#">Mentions légales</a>
-          </li>
-          <li class="footer_liste_element">
-            <a class="footer_lien" href="mailto:contact@ohmyfood.com"
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </div>
+
+    <main>
+      <img
+        src="./assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+        alt="Photo plat servi au delice des sens"
+        class="banner__img img"
+      />
+      <section class="restaurant__header">
+        <h2 class="restaurant__titre">Le délice des sens</h2>
+        <div class="restaurant__button">
+          <i
+            class="fa-regular fa-heart button__icone button__icone--inactive"
+          ></i>
+          <i class="fa-solid fa-heart button__icone button__icone--active"></i>
+        </div>
+      </section>
+
+      <section class="menu">
+        <div class="menu__course">
+          <h3 class="course__titre">Entrées</h3>
+
+          <div class="course__elements">
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Tartare de thon</h4>
+                <p class="element__text">Assaisonné au yuzu</p>
+              </div>
+              <span class="element__prix">25€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Bouchée de homard croustillant</h4>
+                <p class="element__text">Et sa farandole de petits légumes</p>
+              </div>
+              <span class="element__prix">35€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Velouté de cèpes</h4>
+                <p class="element__text">Aux truffes</p>
+              </div>
+              <span class="element__prix">20€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu__course">
+          <h3 class="course__titre">Plats</h3>
+
+          <div class="course__elements">
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">
+                  Poulet rôti aux herbes de Provence
+                </h4>
+                <p class="element__text">Et sa crème de truffe</p>
+              </div>
+              <span class="element__prix">40€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Langouste rôtie</h4>
+                <p class="element__text">Et ses légumes de saison</p>
+              </div>
+              <span class="element__prix">35€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Côte de boeuf Angus</h4>
+                <p class="element__text">Et sa purée de panais</p>
+              </div>
+              <span class="element__prix">44€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu__course">
+          <h3 class="course__titre">Desserts</h3>
+
+          <div class="course__elements">
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Farandole de desserts</h4>
+                <p class="element__text">Du chef</p>
+              </div>
+              <span class="element__prix">18€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Crème brulée</h4>
+                <p class="element__text">Revisitée</p>
+              </div>
+              <span class="element__prix">22€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Tiramisu</h4>
+                <p class="element__text">À la noisette</p>
+              </div>
+              <span class="element__prix">23€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="wrap__button conversion__button">
+          Commander
+        </button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img
+        alt="Logo OhMyFood"
+        src="./assets/images/logo/ohmyfood@2x.svg"
+        class="footer__logo footer__logo--filter-white"
+      />
+      <ul class="footer__liens">
+        <li class="footer__liste-lien">
+          <a class="footer__lien" href="#"
+            ><i class="fa-solid fa-utensils footer__lien-icone"></i>Proposer un
+            restaurant</a
+          >
+        </li>
+        <li class="footer__liste-lien">
+          <a class="footer__lien" href="#"
+            ><i class="fa-solid fa-handshake-angle footer__lien-icone"></i
+            >Devenir partenaire</a
+          >
+        </li>
+        <li class="footer__liste-lien">
+          <a class="footer__lien" href="#">Mentions légales</a>
+        </li>
+        <li class="footer__liste-lien">
+          <a class="footer__lien" href="mailto:contact@ohmyfood.com">Contact</a>
+        </li>
+      </ul>
     </footer>
   </body>
 </html>

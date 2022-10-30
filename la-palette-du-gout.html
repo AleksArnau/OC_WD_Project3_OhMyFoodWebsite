@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <meta charset="UTF-8" />
 
     <script
@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap"
       rel="stylesheet"
     />
 
@@ -21,20 +21,170 @@
 
   <body>
     <header class="header">
+      <a href="./index.html" class="header__return">
+        <i class="fa-solid fa-arrow-left header__return-icon"></i>
+      </a>
       <a href="./index.html" class="header__logo">
         <img
           alt="Logo OhMyFood"
-          style="width: 250px; height: 120px"
           src="./assets/images/logo/ohmyfood@2x.svg"
-          class="header__logo-img"
+          class="header__logo-img img"
         />
       </a>
     </header>
-    <main></main>
+
+    <main>
+      <img
+        src="./assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+        alt="Photo plat servi a la palette du gout"
+        class="banner__img img"
+      />
+      <section class="restaurant__header">
+        <h2 class="restaurant__titre">La palette du goût</h2>
+        <div class="restaurant__button">
+          <i
+            class="fa-regular fa-heart button__icone button__icone--inactive"
+          ></i>
+          <i
+            class="fa-solid fa-heart button__icone button__icone--active"
+          ></i>
+        </div>
+      </section>
+
+      <section class="menu">
+        <div class="menu__course">
+          <h3 class="course__titre">Entrées</h3>
+
+          <div class="course__elements">
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Fricassée d'escargot</h4>
+                <p class="element__text">Au piment d'espelette</p>
+              </div>
+              <span class="element__prix">25€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Foie gras de canard mi-cuit</h4>
+                <p class="element__text">Et ses copeaux de truffe noire</p>
+              </div>
+              <span class="element__prix">35€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Oeuf au plat</h4>
+                <p class="element__text">
+                  Assaisonné à la truffe sur lit de caviar
+                </p>
+              </div>
+              <span class="element__prix">20€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu__course">
+          <h3 class="course__titre">Plats</h3>
+
+          <div class="course__elements">
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Filet de boeuf aux herbes</h4>
+                <p class="element__text">
+                  Accompagné de sa ribambelle de légumes
+                </p>
+              </div>
+              <span class="element__prix">40€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Parmentier de queue de boeuf</h4>
+                <p class="element__text">
+                  À la truffe noire sur sa purée de panais
+                </p>
+              </div>
+              <span class="element__prix">35€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Filet de turbot</h4>
+                <p class="element__text">Aux agrumes</p>
+              </div>
+              <span class="element__prix">44€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu__course">
+          <h3 class="course__titre">Desserts</h3>
+
+          <div class="course__elements">
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Paris-Brest</h4>
+                <p class="element__text">Revisité</p>
+              </div>
+              <span class="element__prix">18€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Macaron au chocolat d'exception</h4>
+                <p class="element__text">Et glace à la vanille de Madagascar</p>
+              </div>
+              <span class="element__prix">22€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+
+            <div class="course__element element">
+              <div class="element__desc">
+                <h4 class="element__titre">Mousse au chocolat</h4>
+                <p class="element__text">
+                  Au piment d'Espelette et à la truffe noire
+                </p>
+              </div>
+              <span class="element__prix">23€</span>
+              <div class="element__active">
+                <i class="fa-solid fa-check element__active-icone"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="wrap__button conversion__button">
+          Commander
+        </button>
+      </section>
+    </main>
+
     <footer class="footer">
       <img
         alt="Logo OhMyFood"
-        style="width: 100px; height: 40px"
         src="./assets/images/logo/ohmyfood@2x.svg"
         class="footer__logo footer__logo--filter-white"
       />

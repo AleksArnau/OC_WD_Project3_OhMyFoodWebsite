@@ -1,0 +1,177 @@
+// fonctions réutilisable avec MIXINS
+
+// MIXINS nous permet de créer des fonctions réutilisables
+
+@mixin text-color-brightness-auto($color) {
+  @if (lightness($color) < 35%) {
+    $color: lighten($color, 35%);
+  } @else {
+    $color: darken($color, 35%);
+  }
+  color: $color;
+}
+
+@mixin flex-custom($justify, $align, $direction, $wrap, $content) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  align-content: $content;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-low {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin flex-center-column-sa {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@mixin flex-center-column-sb {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@mixin flex-start-column-sa {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@mixin flex-center-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+@mixin flex-center-row-sb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@mixin text-title {
+  color: $color-black;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+@mixin text-title-restaurant {
+  color: $color-black;
+  font-family: Shrikhand, "cursive";
+  font-size: 28px;
+}
+
+@mixin text-bold {
+  color: $color-black;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@mixin text-light {
+  color: $color-grey;
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+@mixin text-center {
+  width: 75%;
+  text-align: center;
+}
+
+@mixin padding-sides($size) {
+  padding-left: $size;
+  padding-right: $size;
+}
+
+@mixin padding-top-bot($size) {
+  padding-top: $size;
+  padding-bottom: $size;
+}
+
+@mixin margin-sides($size) {
+  margin-left: $size;
+  margin-right: $size;
+}
+
+@mixin margin-top-bot($size) {
+  margin-top: $size;
+  margin-bottom: $size;
+}
+
+@mixin box-shadow {
+  box-shadow: 0px 2px 15px -7px $color-shadow;
+}
+
+@mixin button-conversion {
+  border-radius: 9999em;
+  height: 3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  color: $color-white;
+  background-color: $color-secondary;
+  box-shadow: inset -20px -20px 40px -5px $color-primary,
+    0px 2px 10px 0px $color-shadow;
+  border: 0px;
+  cursor: pointer;
+  transition-duration: 0.25s;
+}
+
+@mixin button-conversion-hover {
+  background-color: $color-secondary;
+  box-shadow: inset -15px -15px 20px 2px $color-primary,
+    0px 2px 10px 2px $color-shadow;
+}
+
+@mixin button-conversion-active {
+  background-color: $color-secondary;
+  box-shadow: inset -15px -15px 20px 2px $color-primary,
+    0px 2px 10px 2px $color-shadow;
+  color: $color-grey;
+}
+
+@mixin frame-step {
+  border-radius: 1.5em;
+  height: 4.8rem;
+  padding-left: 2rem;
+  color: $color-black;
+  font-weight: 700;
+  background-color: $color-bg-lighter;
+  box-shadow: 0px 2px 15px -7px $color-shadow;
+  cursor: pointer;
+  transition-duration: 0.25s;
+}
+
+@mixin frame-step-hover {
+  background-color: $color-bg-active;
+  box-shadow: 0px 2px 20px 0px $color-shadow;
+}
+
+@mixin card-top-radius($radius) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
