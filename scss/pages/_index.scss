@@ -106,11 +106,10 @@
     column-gap: 1em;
     row-gap: 1em;
     width: 100%;
-    a {
-      text-decoration: none;
-    }
 
     .restaurants__carte {
+      text-decoration: none;
+      color: $color-black;
       border-radius: $card-radius;
       background-color: $color-white;
       @include box-shadow;
