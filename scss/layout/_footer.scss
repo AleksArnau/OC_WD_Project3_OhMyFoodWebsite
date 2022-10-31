@@ -1,0 +1,39 @@
+footer {
+  background-color: $color-bg-dark;
+  margin: 0px;
+  @include padding-sides($padding-sides);
+  @include padding-top-bot($padding-height);
+  height: 200px;
+  @include flex-start-column-sa;
+  width: 100%;
+}
+
+.footer__logo {
+  width: 25%;
+  height: 40px;
+  min-width: 5rem;
+  max-width: 10rem;
+}
+
+/*using https://codepen.io/sosuke/pen/Pjoqqp for the hex to filter color conversion*/
+.footer__logo--filter-white {
+  filter: invert(99%) sepia(0%) saturate(2124%) hue-rotate(293deg)
+    brightness(121%) contrast(100%);
+}
+
+.footer__liens {
+  flex: auto;
+  a {
+    color: $color-white;
+    text-decoration: none;
+  }
+}
+
+.footer__liste-lien {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer__lien-icone {
+  width: 1.8rem;
+}
