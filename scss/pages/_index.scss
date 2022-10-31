@@ -48,10 +48,15 @@
     list-style-type: none;
     counter-reset: etapeCompteur;
 
+    @media (min-width: 1024px) {
+      @include flex-custom(center, center, row, nowrap, flex-start);
+    }
+
     .fonction__etape {
       max-width: 90%;
       width: 350px;
-      margin-bottom: 1.5em;
+      margin: 0 .7em 1.5em .7em;
+      padding-right: 1em;
       @include frame-step;
       @include flex-custom(flex-start, center, row, nowrap, flex-start);
       position: relative;
@@ -106,15 +111,27 @@
     column-gap: 1em;
     row-gap: 1em;
     width: 100%;
-    a {
-      text-decoration: none;
+    justify-items: center;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem;
+      row-gap: 2rem;
     }
 
     .restaurants__carte {
+      text-decoration: none;
+      color: $color-black;
       border-radius: $card-radius;
       background-color: $color-white;
       @include box-shadow;
       position: relative;
+      width: 100%;
+
+      @media (min-width: 481px) and (max-width: 1023px) {
+        width: 80%;
+        min-width: 400px;
+      }
 
       .carte__img {
         @include card-top-radius($card-radius);
