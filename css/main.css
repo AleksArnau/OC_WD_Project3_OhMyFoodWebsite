@@ -617,10 +617,21 @@ footer {
   list-style-type: none;
   counter-reset: etapeCompteur;
 }
+@media (min-width: 1024px) {
+  .fonction .fonction__etapes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+  }
+}
 .fonction .fonction__etapes .fonction__etape {
   max-width: 90%;
   width: 350px;
-  margin-bottom: 1.5em;
+  margin: 0 0.7em 1.5em 0.7em;
+  padding-right: 1em;
   border-radius: 1.5em;
   height: 4.8rem;
   padding-left: 2rem;
@@ -689,6 +700,14 @@ footer {
   column-gap: 1em;
   row-gap: 1em;
   width: 100%;
+  justify-items: center;
+}
+@media (min-width: 1024px) {
+  .restaurants .restaurants__cartes {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+  }
 }
 .restaurants .restaurants__cartes .restaurants__carte {
   text-decoration: none;
@@ -697,6 +716,13 @@ footer {
   background-color: #ffffff;
   box-shadow: 0px 2px 15px -7px grey;
   position: relative;
+  width: 100%;
+}
+@media (min-width: 481px) and (max-width: 1023px) {
+  .restaurants .restaurants__cartes .restaurants__carte {
+    width: 80%;
+    min-width: 400px;
+  }
 }
 .restaurants .restaurants__cartes .restaurants__carte .carte__img {
   border-top-left-radius: 1rem;
@@ -816,10 +842,27 @@ footer {
   padding-left: 5%;
   padding-right: 5%;
 }
+@media (min-width: 1181px) {
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+  }
+}
 .menu .menu__course {
   width: 100%;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  max-width: 500px;
+}
+@media (min-width: 1181px) {
+  .menu .menu__course {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
 }
 .menu .menu__course .course__titre {
   color: #353535;
@@ -921,7 +964,17 @@ footer {
   align-items: center;
   font-size: 14px;
 }
-.menu .wrap__button {
+
+.wrap {
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.wrap .wrap__button {
   margin-top: 2em;
   margin-bottom: 4em;
   width: 12em;

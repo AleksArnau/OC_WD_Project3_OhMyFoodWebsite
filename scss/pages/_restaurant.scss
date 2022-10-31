@@ -47,9 +47,18 @@
   @include flex-center-column-sa;
   @include padding-sides($padding-sides);
 
+  @media (min-width: 1181px) {
+    @include flex-custom(center, flex-start, row, nowrap, flex-start);
+  }
+
   .menu__course {
     width: 100%;
     @include padding-top-bot(0.5em);
+    max-width: 500px;
+
+    @media (min-width: 1181px) {
+      @include padding-sides(0.5em);
+    }
 
     .course__titre {
       @include text-light;
@@ -135,6 +144,12 @@
       }
     }
   }
+}
+
+.wrap {
+  background-color: $color-bg-lighter;
+  @include flex-center-column-sa;
+  @include padding-sides($padding-sides);
 
   .wrap__button {
     margin-top: 2em;
