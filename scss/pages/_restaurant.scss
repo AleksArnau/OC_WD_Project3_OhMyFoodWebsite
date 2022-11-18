@@ -2,8 +2,6 @@
   max-height: 30em;
   height: 300px;
   object-fit: cover;
-  // background: url("../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
-  // background-size: cover;
 }
 
 .restaurant__header {
@@ -27,17 +25,24 @@
 
     .button__icone {
       font-size: 28px;
+      position: absolute;
+      right: 0rem;
+      top: 0rem;
     }
     .button__icone--active {
-      display: none;
+      opacity: 0;
     }
   }
   .restaurant__button:hover {
     .button__icone--inactive {
-      display: none;
+      opacity: 0;
     }
     .button__icone--active {
-      display: flex;
+      opacity: 1;
+      transition: 0.5s;
+      background: -webkit-linear-gradient(#9356dc, #ff79da);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }
@@ -79,6 +84,12 @@
     }
     .course__elements {
       @include flex-start-column-sa;
+
+      @for $i from 1 through 4 {
+        .course__element:nth-child(#{$i}) {
+          animation: #{$i * 0.7}s ease-out 0s slideInBottom;
+        }
+      }
 
       .course__element {
         @include flex-custom(space-between, flex-end, row, nowrap, flex-start);

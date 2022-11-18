@@ -3,7 +3,6 @@ body {
   font-family: Roboto;
   @include flex-center-column;
   width: 100%;
-
 }
 
 main {
@@ -28,3 +27,4 @@ section {
 .conversion__button:active {
   @include button-conversion-active;
 }
+
