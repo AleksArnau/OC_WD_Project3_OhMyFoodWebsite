@@ -138,8 +138,8 @@
         }
         .element__active {
           background-color: $color-tertiary;
-          width: 4em;
-          margin: -10px -5rem -10px 0;
+          width: $width-element__active;
+          margin: -10px $margin-element__active--hidden -10px 0;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -162,8 +162,9 @@
       }
       .course__element:hover {
         .element__active {
-          margin-right: -1rem;
-        }.element__active--icone {
+          margin-right: $margin-element__active;
+        }
+        .element__active--icone {
           transform: rotate(0);
         }
       }
