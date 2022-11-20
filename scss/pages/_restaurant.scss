@@ -54,6 +54,7 @@
 
   @media (min-width: 1181px) {
     @include flex-custom(center, flex-start, row, nowrap, flex-start);
+    flex-basis: 0;
   }
 
   .menu__course {
@@ -92,65 +93,78 @@
       }
 
       .course__element {
-        @include flex-custom(space-between, flex-end, row, nowrap, flex-start);
+        display: flex;
         width: 100%;
         padding: 10px;
         @include margin-top-bot(5px);
         background-color: $color-bg;
-        position: relative;
+        overflow: hidden;
+        cursor: pointer;
         border-radius: 1em;
         box-shadow: 0px 2px 15px -7px $color-shadow;
 
         .element__desc {
-          @include flex-custom(
-            space-between,
-            flex-start,
-            column,
-            nowrap,
-            flex-start
-          );
           white-space: nowrap;
           text-overflow: ellipsis;
           overflow: hidden;
+          flex: 1;
 
           .element__titre {
             @include text-bold;
             @include margin-top-bot(5px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
           }
           .element__text {
             @include text-light;
             font-size: 15px;
             @include margin-top-bot(5px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
           }
         }
         .element__prix {
           @include text-bold;
           font-size: 15px;
           @include margin-top-bot(5px);
+          @include padding-sides(1em);
           display: flex;
           justify-content: flex-end;
           align-items: flex-end;
-          @include padding-sides(1em);
         }
         .element__active {
           background-color: $color-tertiary;
-          width: 3em;
+          width: 4em;
+          margin: -10px -5rem -10px 0;
           display: flex;
           justify-content: center;
           align-items: center;
-          display: none;
+          transition-duration: 0.5s;
 
-          .element__active-icone {
+          .element__active--icone {
             background-color: $color-white;
             color: $color-tertiary;
-            height: 1.2rem;
-            width: 1.2rem;
+            height: 1.5rem;
+            width: 1.5rem;
             border-radius: 100px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 14px;
+            font-size: 16px;
+            transform: rotate(360deg);
+            transition-duration: 0.5s;
           }
+        }
+      }
+      .course__element:hover {
+        .element__active {
+          margin-right: -1rem;
+        }.element__active--icone {
+          transform: rotate(0);
         }
       }
     }

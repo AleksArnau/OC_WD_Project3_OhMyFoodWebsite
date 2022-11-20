@@ -930,6 +930,7 @@ footer {
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: flex-start;
+    flex-basis: 0;
   }
 }
 .menu .menu__course {
@@ -984,30 +985,21 @@ footer {
 }
 .menu .menu__course .course__elements .course__element {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: flex-start;
   width: 100%;
   padding: 10px;
   margin-top: 5px;
   margin-bottom: 5px;
   background-color: #ffffff;
-  position: relative;
+  overflow: hidden;
+  cursor: pointer;
   border-radius: 1em;
   box-shadow: 0px 2px 15px -7px grey;
 }
 .menu .menu__course .course__elements .course__element .element__desc {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-content: flex-start;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  flex: 1;
 }
 .menu .menu__course .course__elements .course__element .element__desc .element__titre {
   color: #000000;
@@ -1015,6 +1007,10 @@ footer {
   font-size: 18px;
   margin-top: 5px;
   margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 .menu .menu__course .course__elements .course__element .element__desc .element__text {
   color: #353535;
@@ -1023,6 +1019,10 @@ footer {
   font-size: 15px;
   margin-top: 5px;
   margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 .menu .menu__course .course__elements .course__element .element__prix {
   color: #000000;
@@ -1031,30 +1031,39 @@ footer {
   font-size: 15px;
   margin-top: 5px;
   margin-bottom: 5px;
+  padding-left: 1em;
+  padding-right: 1em;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding-left: 1em;
-  padding-right: 1em;
 }
 .menu .menu__course .course__elements .course__element .element__active {
   background-color: #99e2d0;
-  width: 3em;
+  width: 4em;
+  margin: -10px -5rem -10px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
+  transition-duration: 0.5s;
 }
-.menu .menu__course .course__elements .course__element .element__active .element__active-icone {
+.menu .menu__course .course__elements .course__element .element__active .element__active--icone {
   background-color: #ffffff;
   color: #99e2d0;
-  height: 1.2rem;
-  width: 1.2rem;
+  height: 1.5rem;
+  width: 1.5rem;
   border-radius: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 16px;
+  transform: rotate(360deg);
+  transition-duration: 0.5s;
+}
+.menu .menu__course .course__elements .course__element:hover .element__active {
+  margin-right: -1rem;
+}
+.menu .menu__course .course__elements .course__element:hover .element__active--icone {
+  transform: rotate(0);
 }
 
 .wrap {
