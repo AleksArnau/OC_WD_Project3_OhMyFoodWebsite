@@ -2,8 +2,6 @@
   max-height: 30em;
   height: 300px;
   object-fit: cover;
-  // background: url("../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
-  // background-size: cover;
 }
 
 .restaurant__header {
@@ -27,17 +25,24 @@
 
     .button__icone {
       font-size: 28px;
+      position: absolute;
+      right: 0rem;
+      top: 0rem;
     }
     .button__icone--active {
-      display: none;
+      opacity: 0;
     }
   }
   .restaurant__button:hover {
     .button__icone--inactive {
-      display: none;
+      opacity: 0;
     }
     .button__icone--active {
-      display: flex;
+      opacity: 1;
+      transition: 0.5s;
+      background: -webkit-linear-gradient(#9356dc, #ff79da);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }
@@ -80,66 +85,86 @@
     .course__elements {
       @include flex-start-column-sa;
 
+      @for $i from 1 through 4 {
+        .course__element:nth-child(#{$i}) {
+          animation: #{$i * 0.7}s ease-out 0s slideInBottom;
+        }
+      }
+
       .course__element {
-        @include flex-custom(space-between, flex-end, row, nowrap, flex-start);
+        display: flex;
         width: 100%;
         padding: 10px;
         @include margin-top-bot(5px);
         background-color: $color-bg;
-        position: relative;
+        overflow: hidden;
+        cursor: pointer;
         border-radius: 1em;
         box-shadow: 0px 2px 15px -7px $color-shadow;
 
         .element__desc {
-          @include flex-custom(
-            space-between,
-            flex-start,
-            column,
-            nowrap,
-            flex-start
-          );
           white-space: nowrap;
           text-overflow: ellipsis;
           overflow: hidden;
+          flex: 1;
 
           .element__titre {
             @include text-bold;
             @include margin-top-bot(5px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
           }
           .element__text {
             @include text-light;
             font-size: 15px;
             @include margin-top-bot(5px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
           }
         }
         .element__prix {
           @include text-bold;
           font-size: 15px;
           @include margin-top-bot(5px);
+          @include padding-sides(1em);
           display: flex;
           justify-content: flex-end;
           align-items: flex-end;
-          @include padding-sides(1em);
         }
         .element__active {
           background-color: $color-tertiary;
-          width: 3em;
+          width: $width-element__active;
+          margin: -10px $margin-element__active--hidden -10px 0;
           display: flex;
           justify-content: center;
           align-items: center;
-          display: none;
+          transition-duration: 0.5s;
 
-          .element__active-icone {
+          .element__active--icone {
             background-color: $color-white;
             color: $color-tertiary;
-            height: 1.2rem;
-            width: 1.2rem;
+            height: 1.5rem;
+            width: 1.5rem;
             border-radius: 100px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 14px;
+            font-size: 16px;
+            transform: rotate(360deg);
+            transition-duration: 0.5s;
           }
+        }
+      }
+      .course__element:hover {
+        .element__active {
+          margin-right: $margin-element__active;
+        }
+        .element__active--icone {
+          transform: rotate(0);
         }
       }
     }
