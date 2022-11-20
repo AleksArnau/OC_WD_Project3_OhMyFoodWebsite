@@ -1,3 +1,29 @@
+.loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 120;
+  animation: loader 0.01s;
+  animation-delay: 1.5s;
+  animation-fill-mode: both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .loader__spinner {
+    border: 16px solid $color-bg-darker;
+    border-top: 16px solid $color-primary;
+    border-bottom: 16px solid $color-primary;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+}
+
 .local {
   background-color: $color-bg-darker;
   @include padding-top-bot($padding-height);
@@ -55,7 +81,7 @@
     .fonction__etape {
       max-width: 90%;
       width: 350px;
-      margin: 0 .7em 1.5em .7em;
+      margin: 0 0.7em 1.5em 0.7em;
       padding-right: 1em;
       @include frame-step;
       @include flex-custom(flex-start, center, row, nowrap, flex-start);
@@ -139,6 +165,9 @@
         width: 100%;
         object-fit: cover;
       }
+      &__test {
+        object-fit: cover;
+      }
 
       .carte__badge {
         position: absolute;
@@ -171,23 +200,33 @@
             color: $color-black;
           }
         }
+
         .carte__button {
-          position: absolute;
-          right: 1.5rem;
+          height: 2rem;
+          width: 2rem;
+          cursor: pointer;
+          position: relative;
 
           .carte__icone {
-            font-size: 24px;
+            font-size: 28px;
+            position: absolute;
+            right: 0rem;
+            top: 0rem;
           }
-          .carte__icone--inactive {
-            display: none;
+          .carte__icone--active {
+            opacity: 0;
           }
         }
         .carte__button:hover {
-          .carte__icone--active {
-            display: none;
-          }
           .carte__icone--inactive {
-            display: flex;
+            opacity: 0;
+          }
+          .carte__icone--active {
+            opacity: 1;
+            transition: 0.5s;
+            background: -webkit-linear-gradient(#9356dc, #ff79da);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
           }
         }
       }
