@@ -54,7 +54,6 @@
 
   @media (min-width: 1181px) {
     @include flex-custom(center, flex-start, row, nowrap, flex-start);
-    flex-basis: 0;
   }
 
   .menu__course {
